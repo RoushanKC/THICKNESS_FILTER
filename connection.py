@@ -15,7 +15,7 @@ class Connection:
     def run(self):
         try:
             while True:
-                msg=self.sock.recv_json()
+                msg=self.sock.recv_json(1)
                 self.push_sock.send_json(msg)
                 logging.info(f'{msg}')
         except Exception as e:
